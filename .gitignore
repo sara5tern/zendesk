@@ -1,1 +1,3 @@
 .env
+zendesk.db
+__pycache__/

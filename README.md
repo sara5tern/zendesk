@@ -15,3 +15,14 @@ Connects Claude Code to Zendesk through an MCP server (`.mcp.json`).
    `/mcp` to confirm it is connected.
 
 Review the MCP server's code before giving it your API token.
+
+## Quick CLI (no MCP server needed)
+
+Needs only `ZENDESK_SUBDOMAIN`, `ZENDESK_EMAIL`, `ZENDESK_API_KEY`.
+
+```
+./zd search "status:open priority:urgent"
+./zd ticket 12345
+./zd sync                                   # all tickets -> local zendesk.db (SQLite), resumable
+./zd sql "select status, count(*) from tickets group by 1"
+```
